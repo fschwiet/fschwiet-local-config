@@ -1,0 +1,7 @@
+core.symlinks=false
+core.autocrlf=true
+color.diff=auto
+pack.packsizelimit=2g
+help.format=html
+http.sslcainfo=/mingw/bin/curl-ca-bundle.crt
+sendemail.smtpserver=/mingw/bin/msmtp.exe
