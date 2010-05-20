@@ -1,6 +1,11 @@
 set-location c:\src
 cls
 
+# ISPOWERSHELL may be checked by git scripts
+[System.Environment]::SetEnvironmentVariable("ISPOWERSHELL", "true", "Process")
+
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\mingw\bin", "Process")
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\bin", "Process")
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\git", "Process")
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\src\git-commands", "Process")
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
