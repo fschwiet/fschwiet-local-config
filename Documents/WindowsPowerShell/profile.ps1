@@ -1,13 +1,13 @@
-set-location c:\src
 cls
-
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\git", "Process")
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\src\git-commands", "Process")
-[System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
 
 "  "
 "Would you like to play a game of chess?  "
 "  "
+
+
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\git", "Process")
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\src\git-commands", "Process")
+[System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
 
 
 . (Resolve-Path ~/Documents/WindowsPowershell/gitutils.ps1) 
@@ -50,3 +50,6 @@ function prompt {
     Write-Host('>') -nonewline -foregroundcolor Green
     return " "
 }
+
+
+set-location c:\src
