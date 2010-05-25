@@ -1,4 +1,3 @@
-set-location c:\src
 cls
 
 # ISPOWERSHELL may be checked by git scripts
@@ -14,6 +13,8 @@ cls
 "  "
 "Would you like to play a game of chess?  "
 "  "
+
+
 
 
 . (Resolve-Path ~/Documents/WindowsPowershell/gitutils.ps1) 
@@ -56,3 +57,6 @@ function prompt {
     Write-Host('>') -nonewline -foregroundcolor Green
     return " "
 }
+
+
+set-location c:\src
