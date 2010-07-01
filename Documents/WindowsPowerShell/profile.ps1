@@ -10,7 +10,7 @@ cls
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0", "Process")
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
 
-$ndiff = "c:\src\gitndiff"
+$ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
 $msbuild = "C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe"
