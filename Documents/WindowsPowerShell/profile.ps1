@@ -26,7 +26,7 @@ $pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
 
 
-
+. (Resolve-Path ~/Documents/WindowsPowershell/DebuggingLibrary.ps1)
 . (Resolve-Path ~/Documents/WindowsPowershell/gitutils.ps1) 
 
 function prompt {
