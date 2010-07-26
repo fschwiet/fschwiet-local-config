@@ -1,0 +1,2 @@
+replace notepad with programmer's notepad by using debug hook:
+http://untidy.net/blog/2009/11/03/replacing-notepad-with-pn-via-image-file-execution-options/
