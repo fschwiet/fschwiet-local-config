@@ -17,11 +17,14 @@ cls
 
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
 
+$ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
 $msbuild = "C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe"
-    
+
+# programmer's notepad
+$pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
 
 
