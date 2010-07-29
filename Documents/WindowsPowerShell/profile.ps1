@@ -8,7 +8,15 @@ cls
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\git", "Process")
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\src\git-commands", "Process")
 [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0", "Process")
+
+
+# used these path extensions to run NUnit from TFS build
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0", "Process")
+[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE", "Process")
+
+
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
+
 
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
