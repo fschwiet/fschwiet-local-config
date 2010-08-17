@@ -3,3 +3,4 @@ user.email=fschwiet@gmail.com
 diff.tool=diffmerge
 difftool.diffmerge.cmd=diffmerge.sh "$LOCAL" "$REMOTE"
 core.editor=notepad.sh
+core.autocrlf=true
