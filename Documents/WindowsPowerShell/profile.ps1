@@ -15,8 +15,10 @@ includeEnvironmentPath("C:\src\git-commands");
 $nunitpath = get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*' | select fullname
 includeEnvironmentPath($nunitpath);
 
+#includeEnvironementPath("C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE");
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
+
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
 $msbuild = "C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe"
