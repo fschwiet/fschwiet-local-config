@@ -1,5 +1,5 @@
 core.symlinks=false
-core.autocrlf=false
+core.autocrlf=true
 color.diff=auto
 pack.packsizelimit=2g
 help.format=html

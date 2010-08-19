@@ -17,6 +17,8 @@ includeEnvironmentPath($nunitpath);
 
 #includeEnvironementPath("C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE");
 
+includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
+
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
 

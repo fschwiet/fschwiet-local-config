@@ -1,6 +1,8 @@
+core.editor=notepad
+diff.tool=diffmerge
+difftool.diffmerge.cmd=diffmerge $LOCAL $REMOTE
+merge.tool=diffmerge
+mergetool.diffmerge.cmd=diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+mergetool.diffmerge.trustexitcode=false
 user.name=fschwiet
 user.email=fschwiet@gmail.com
-diff.tool=diffmerge
-difftool.diffmerge.cmd=diffmerge.sh "$LOCAL" "$REMOTE"
-core.editor=notepad.sh
-core.autocrlf=true
