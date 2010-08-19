@@ -1,14 +1,20 @@
 cls
 
+[System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
 # ISPOWERSHELL may be checked by git scripts
 [System.Environment]::SetEnvironmentVariable("ISPOWERSHELL", "true", "Process")
 
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\mingw\bin", "Process")
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\bin", "Process")
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\msysgit\msysgit\git", "Process")
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\src\git-commands", "Process")
-[System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + "C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0", "Process")
-[System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
+function includeEnvironmentPath {
+    [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + $args[0], "Process")
+}
+
+
+includeEnvironmentPath("C:\msysgit\cmd");
+includeEnvironmentPath("C:\src\git-commands");
+
+$nunitpath = get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*' | select fullname
+includeEnvironmentPath($nunitpath);
+
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
@@ -26,8 +32,9 @@ $pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
 
 
-. (Resolve-Path ~/Documents/WindowsPowershell/DebuggingLibrary.ps1)
-. (Resolve-Path ~/Documents/WindowsPowershell/gitutils.ps1) 
+. DebuggingLibrary.ps1
+. gitutils.ps1
+
 
 function prompt {
     $path = ""
