@@ -9,6 +9,7 @@ function includeEnvironmentPath {
 }
 
 
+includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
 includeEnvironmentPath("C:\src\git-commands");
 
@@ -21,6 +22,10 @@ includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
+function luke
+{
+    . java -jar c:\src\luke\lukeall-1.0.1.jar
+}
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
 $msbuild = "C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe"
