@@ -13,7 +13,7 @@ includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
 includeEnvironmentPath("C:\src\git-commands");
 
-$nunitpath = get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*' | select fullname
+$nunitpath = (get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*').fullname
 includeEnvironmentPath($nunitpath);
 
 #includeEnvironementPath("C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE");
