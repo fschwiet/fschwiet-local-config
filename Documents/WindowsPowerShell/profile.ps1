@@ -43,6 +43,7 @@ $pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
 . DebuggingLibrary.ps1
 . gitutils.ps1
+. miscutils.ps1
 
 
 function prompt {
