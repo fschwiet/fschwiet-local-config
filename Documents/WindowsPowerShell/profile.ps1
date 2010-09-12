@@ -28,23 +28,27 @@ function luke
 }
 
 #  MSBuild usage:   & $msbuild ".\file.sln"
-$msbuild = "C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe"
+$msbuild = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 
 # programmer's notepad
 $pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
+# framework references
+function Get-FrameworkDirectory()
+{
+    $([System.Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory())
+}
 
+set-alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
+set-alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
 
 "  "
 "Would you like to play a game of chess?  "
 "  "
 
-
-
 . DebuggingLibrary.ps1
 . gitutils.ps1
 . miscutils.ps1
-
 
 function prompt {
     $path = ""
@@ -84,6 +88,5 @@ function prompt {
     Write-Host('>') -nonewline -foregroundcolor Green
     return " "
 }
-
 
 set-location c:\src
