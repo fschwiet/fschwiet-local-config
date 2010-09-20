@@ -85,6 +85,8 @@ function prompt {
     return " "
 }
 
+import-module WebAdministration
+
 set-location c:\src
 
 
