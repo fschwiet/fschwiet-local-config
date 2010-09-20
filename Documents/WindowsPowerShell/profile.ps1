@@ -1,13 +1,16 @@
 cls
 
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
-# ISPOWERSHELL may be checked by git scripts
-[System.Environment]::SetEnvironmentVariable("ISPOWERSHELL", "true", "Process")
 
 function includeEnvironmentPath {
-    [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + $args[0], "Process")
-}
+	param ($path)
+	
+	if (-not (test-path $path)) {
+		write-host "Missing path added to PATH variable: $path";
+	}
 
+    [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + $path, "Process")
+}
 
 includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
@@ -15,9 +18,6 @@ includeEnvironmentPath("C:\src\git-commands");
 
 $nunitpath = (get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*').fullname
 includeEnvironmentPath($nunitpath);
-
-#includeEnvironementPath("C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE");
-
 includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
@@ -41,10 +41,6 @@ function Get-FrameworkDirectory()
 
 set-alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
 set-alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
-
-"  "
-"Would you like to play a game of chess?  "
-"  "
 
 . DebuggingLibrary.ps1
 . gitutils.ps1
@@ -90,3 +86,8 @@ function prompt {
 }
 
 set-location c:\src
+
+
+"  "
+"Would you like to play a game of chess?  "
+"  "
