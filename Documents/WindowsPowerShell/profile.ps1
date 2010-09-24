@@ -14,7 +14,7 @@ function includeEnvironmentPath {
 
 includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
-includeEnvironmentPath("C:\src\git-commands");
+includeEnvironmentPath("c:\src\local-config\imports\");
 
 $nunitpath = (get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*').fullname
 includeEnvironmentPath($nunitpath);
@@ -41,6 +41,8 @@ function Get-FrameworkDirectory()
 
 set-alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
 set-alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
+
+set-alias linq-where where-object
 
 . DebuggingLibrary.ps1
 . gitutils.ps1
@@ -86,6 +88,7 @@ function prompt {
 }
 
 import-module WebAdministration
+import-module c:\src\local-config\imports\LINQ.psm1
 
 set-location c:\src
 
