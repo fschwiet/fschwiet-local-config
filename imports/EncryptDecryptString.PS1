@@ -2,7 +2,7 @@
 # Powershell Allows The Loading of .NET Assemblies
 # Load the Security assembly to use with this script 
 #################
-[Reflection.Assembly]::LoadWithPartialName("System.Security")
+$null = [Reflection.Assembly]::LoadWithPartialName("System.Security")
 
 #################
 # This function is to Encrypt A String.
@@ -88,30 +88,3 @@ function Decrypt-String($Encrypted, $Passphrase, $salt="SaltCrypto", $init="IV_P
 	$r.Clear()
 }
 
-# This clears the screen of the output from the loading of the assembly.
-cls
-
-# $me will never = 1, so It will run indefinately
-$me = 0
-	write-host "To End This Application, Close the Window"	
-	Write-host ""
-do
-{
-	# Prompt the user for the password	
-	$string = read-host "Please Enter User Password"
-	# Encrypt the string and store it into the $encrypted variable
-	$encrypted = Encrypt-String $string "MyStrongPassword"
-	# Write result to the screen
-	write-host "Encrypted Password is: $encrypted"
-	write-host ""
-
-	write-host "Testing Decryption of Password..."
-	
-	# Decrypts the string and stores the decrypted value in $decrypted
-	$decrypted = Decrypt-String $encrypted "MyStrongPassword"
-	# Writes the decrpted value to the screen
-	write-host "Decrypted Password is: $decrypted"
-	write-host ""
-}
-
-while ($me -ne 1)

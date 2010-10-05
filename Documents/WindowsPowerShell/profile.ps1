@@ -47,6 +47,7 @@ set-alias linq-where where-object
 . DebuggingLibrary.ps1
 . gitutils.ps1
 . miscutils.ps1
+. EncryptDecryptString.PS1
 
 function prompt {
     $path = ""
