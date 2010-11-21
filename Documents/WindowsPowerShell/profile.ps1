@@ -91,6 +91,7 @@ function prompt {
 import-module WebAdministration
 import-module c:\src\local-config\imports\LINQ.psm1
 Add-PSSnapin PSHostsFile
+add-pssnapin Lua2WowLua
 
 set-location c:\src
 
