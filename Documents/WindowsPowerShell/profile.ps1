@@ -1,6 +1,7 @@
 cls
 
 [System.Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, “Process”)
+$env:editor = "notepad"
 
 function includeEnvironmentPath {
 	param ($path)
@@ -16,8 +17,6 @@ includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
 includeEnvironmentPath("c:\src\local-config\imports\");
 
-$nunitpath = (get-item 'C:\Program Files (x86)\NUnit 2.*\bin\*').fullname
-includeEnvironmentPath($nunitpath);
 includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
@@ -26,12 +25,6 @@ function luke
 {
     . java -jar c:\src\luke\lukeall-1.0.1.jar
 }
-
-#  MSBuild usage:   & $msbuild ".\file.sln"
-$msbuild = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
-
-# programmer's notepad
-$pn = "c:\Program Files (x86)\Programmer's Notepad\pn"
 
 # framework references
 function Get-FrameworkDirectory()
