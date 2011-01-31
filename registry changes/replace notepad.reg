@@ -1,5 +1,5 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe]
-"Debugger"="c:\\Program Files (x86)\\Programmer's Notepad\\pn.exe --allowmulti -z"
+"Debugger"="c:\\Program Files (x86)\\Programmer's Notepad\\pn.exe --allowmulti -z "
 
