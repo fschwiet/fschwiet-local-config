@@ -12,4 +12,7 @@ if (!(test-path $target) ) {
 
 rm (join-path $target *) -recurse
 
-copy .\WindowsPowerShell\* $target -rec
+copy .\contents\* $target -rec
+
+
+"to install posh-git: `n 1) clone https://github.com/dahlbyk/posh-git.git`n 2) Run .\install.ps1" | write-host -fore green
