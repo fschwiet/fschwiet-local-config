@@ -1,2 +1,1 @@
-.\deploy.ps1 "\\Ardc2\Users\franks\Documents\WindowsPowerShell"
-.\deploy_home.ps1
+.\deploy.ps1 ([System.IO.FileInfo] $profile).directory.fullname
