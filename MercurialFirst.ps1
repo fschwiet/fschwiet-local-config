@@ -1,0 +1,1 @@
+cp .\env-USERPROFILE-.hgrc $env:USERPROFILE\.hgrc
