@@ -1,2 +1,6 @@
 [ui]
 username = Frank Schwieterman <fschwiet@gmail.com>
+
+[extensions]
+hgext.purge=
+hgext.bookmark=
