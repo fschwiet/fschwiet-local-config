@@ -17,7 +17,22 @@ includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
 includeEnvironmentPath("C:\msysgit\cmd");
 includeEnvironmentPath("c:\src\local-config\imports\");
 
-includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
+
+if (test-path 'C:\Program Files (x86)\SourceGear\DiffMerge\diffmerge.exe') {
+	includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
+} else {
+	$shorthandSoIdontHaveToLearnANewExeName = "C:\Program Files\SourceGear\Common\DiffMerge\diffmerge.exe"
+	if (-not (test-path "C:\Program Files\SourceGear\Common\DiffMerge\diffmerge.exe")) {
+		$original = "C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe"
+		
+		if (test-path $original) {
+			if (-not (test-path $shorthandSoIdontHaveToLearnANewExeName)) {
+				cp $original $shorthandSoIdontHaveToLearnANewExeName
+			}
+		}
+	}
+	includeEnvironmentPath("C:\Program Files\SourceGear\Common\DiffMerge");
+}
 
 $ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
