@@ -60,6 +60,11 @@ set-alias linq-where where-object
 import-module WebAdministration
 import-module c:\src\local-config\imports\LINQ.psm1
 
+Import-Module DistributedCacheAdministration
+if (get-module [D]istributedCacheAdministration) {
+	Use-CacheCluster;
+}
+
 set-location c:\src
 
 
