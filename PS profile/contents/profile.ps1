@@ -54,7 +54,7 @@ function Get-FrameworkDirectory()
 }
 
 set-alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
-set-alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
+set-alias msbuild "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe"
 
 set-alias linq-where where-object
 
