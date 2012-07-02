@@ -6,14 +6,14 @@ param(
     $packagePath = ".\packages"
     )
 
-$sourcePath = (resolve-path ".")
-$targetPath = $configPath
+$sourceConfigPath = (resolve-path ".\configs")
+$targetConfigPath = $configPath
 
 $sourcePackagePath = (resolve-path ".\packages")
 $targetPackagePath = 'C:\Program Files\Sublime Text 2\Pristine Packages'
 
 if ($updateGitRepo) {
-    $sourcePath,$targetPath = $targetPath,$sourcePath
+    $sourceConfigPath,$targetConfigPath = $targetConfigPath,$sourceConfigPath
     $sourcePackagePath,$targetPackagePath = $targetPackagePath,$sourcePackagePath
 }
 
@@ -29,9 +29,9 @@ function attemptCopy($file, $t) {
     }
 }
 
-"copying from $sourcePath to $targetPath"
+"copying from $sourceConfigPath to $targetConfigPath"
 
-gci $sourcePath "*.sublime-settings" | % { attemptCopy $_ $targetPath }
+gci $sourceConfigPath "*.sublime-settings" | % { attemptCopy $_ $targetConfigPath }
 
 if (-not $updateGitRepo) {
     "copying from $sourcePackagePath to $targetPackagePath"
@@ -42,6 +42,6 @@ if (-not $updateGitRepo) {
 if (-not $updateGitRepo) {
     "if you meant to write to the current machine's config, use -updateGitRepo after reverting what you just imported from config" | write-host -fore yellow
 } else {
-    "where any module configs copied?  maybe they should be skipped"
+    "where any module configs copied?  maybe they should be skipped" | write-host -fore yellow
 }
 
