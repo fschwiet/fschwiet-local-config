@@ -13,16 +13,7 @@ function includeEnvironmentPath {
     [System.Environment]::SetEnvironmentVariable("PATH", $env:Path + ";" + $path, "Process")
 }
 
-includeEnvironmentPath("C:\Program Files (x86)\Lua\5.1\bin");
-includeEnvironmentPath("C:\msysgit\cmd");
 includeEnvironmentPath("c:\src\local-config\imports\");
-
-if (-not (get-command jav[a])) {
-    $typicalJavaPath = "C:\Program Files (x86)\Java\jre6\bin";
-    if (test-path $typicalJavaPath) {
-        includeEnvironmentPath($typicalJavaPath);
-    }
-}
 
 if (test-path 'C:\Program Files (x86)\SourceGear\DiffMerge\diffmerge.exe') {
 	includeEnvironmentPath('C:\Program Files (x86)\SourceGear\DiffMerge');
@@ -39,8 +30,6 @@ if (test-path 'C:\Program Files (x86)\SourceGear\DiffMerge\diffmerge.exe') {
 	}
 	includeEnvironmentPath("C:\Program Files\SourceGear\Common\DiffMerge");
 }
-
-$ndiff = "c:\src\gitndiff\gitndiff.ps1"
 
 function luke
 {
